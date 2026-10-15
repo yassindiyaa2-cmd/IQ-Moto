@@ -1,0 +1,1142 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101114">
+<meta name="description" content="IQ Moto - منصة بيع وشراء الدراجات النارية في العراق">
+<title>IQ Moto | آي كيو موتو</title>
+
+<style>
+:root {
+  --bg: #101114;
+  --card: #191a1f;
+  --red: #e63946;
+  --text: #ffffff;
+  --muted: #a5a5ad;
+  --border: #292a30;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Tahoma, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(1200px, 92%);
+  margin: auto;
+}
+
+/* Header */
+
+header {
+  background: #141519;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 900;
+  direction: ltr;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--red);
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  color: #d2d2d6;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--red);
+}
+
+.btn {
+  background: var(--red);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 18px;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #c92e3b;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #484950;
+}
+
+.btn-outline:hover {
+  background: #25262b;
+}
+
+/* Hero */
+
+.hero {
+  padding: 65px 0 55px;
+  background:
+    radial-gradient(ellipse at 10% 20%, #6e17222b, transparent 45%),
+    linear-gradient(135deg, #191a20, #101114);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 35px;
+}
+
+.badge {
+  display: inline-block;
+  color: #ff7881;
+  background: #e639461b;
+  border: 1px solid #e6394644;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 4vw, 55px);
+  line-height: 1.4;
+  margin-bottom: 18px;
+}
+
+.hero h1 span {
+  color: var(--red);
+}
+
+.hero p {
+  color: var(--muted);
+  margin-bottom: 25px;
+  max-width: 470px;
+}
+
+.hero-image {
+  min-height: 300px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #202127;
+  border: 1px solid #34353c;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Search */
+
+.search-box {
+  background: #1b1c21;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 12px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  background: #111216;
+  color: white;
+  border: 1px solid #35363e;
+  border-radius: 7px;
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--red);
+}
+
+/* Sections */
+
+section.listings {
+  padding: 55px 0;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.section-heading h2 {
+  font-size: 25px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.bike-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  overflow: hidden;
+  transition: .2s;
+}
+
+.bike-card:hover {
+  transform: translateY(-4px);
+  border-color: #55565f;
+}
+
+.bike-image {
+  height: 215px;
+  background: #22232a;
+  position: relative;
+}
+
+.bike-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bike-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--red);
+  padding: 4px 9px;
+  border-radius: 5px;
+  font-size: 11px;
+}
+
+.bike-info {
+  padding: 17px;
+}
+
+.bike-info h3 {
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+
+.bike-meta {
+  color: var(--muted);
+  font-size: 12px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 17px;
+  padding-top: 13px;
+  border-top: 1px solid var(--border);
+}
+
+.price {
+  color: #ff626d;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.price small {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.empty {
+  grid-column: 1 / -1;
+  padding: 40px;
+  text-align: center;
+  color: var(--muted);
+  background: var(--card);
+  border-radius: 12px;
+}
+
+/* Categories */
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 15px 0 50px;
+}
+
+.category {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 22px 12px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.category:hover {
+  border-color: var(--red);
+}
+
+.category strong {
+  display: block;
+  margin-top: 7px;
+}
+
+.category span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Sell banner */
+
+.sell-banner {
+  margin: 20px auto 60px;
+  padding: 35px;
+  border-radius: 15px;
+  background: linear-gradient(120deg, #4a151e, #1c1c22);
+  border: 1px solid #51232a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.sell-banner p {
+  color: #d0bfc1;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* Footer */
+
+footer {
+  background: #15161a;
+  border-top: 1px solid var(--border);
+  padding: 30px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Modals */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: #000c;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #191a1f;
+  border: 1px solid #393a41;
+  border-radius: 13px;
+  width: min(540px, 100%);
+  padding: 25px;
+  position: relative;
+  margin: auto;
+}
+
+.modal-content h2 {
+  margin-bottom: 18px;
+}
+
+.close {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 13px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: #d0d0d5;
+}
+
+.form-note {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+.modal-content .btn {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.detail-image {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.detail-description {
+  color: #d0d0d5;
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+.admin-row {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.admin-row span {
+  font-size: 13px;
+}
+
+.delete-btn {
+  background: #7c2029;
+  border: 0;
+  color: white;
+  border-radius: 6px;
+  padding: 7px 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 850px) {
+  nav {
+    gap: 12px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image {
+    min-height: 230px;
+  }
+
+  .hero-image img {
+    min-height: 230px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .search-box {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .search-box input {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .nav {
+    flex-wrap: wrap;
+    padding: 12px 0;
+  }
+
+  nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+
+  .nav > .btn {
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+
+  .hero {
+    padding-top: 35px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .search-box {
+    grid-template-columns: 1fr;
+  }
+
+  .search-box input {
+    grid-column: auto;
+  }
+
+  .sell-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#">IQ <span>MOTO</span></a>
+
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#listings">الدراجات</a>
+      <a href="#categories">التصنيفات</a>
+      <a href="#sell">بيع دراجتك</a>
+    </nav>
+
+    <button class="btn" onclick="openSell()">+ أضف إعلانك</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div>
+          <span class="badge">🏍️ منصتك للدراجات في العراق</span>
+          <h1>دراجتك القادمة<br>تبدأ من <span>IQ MOTO</span></h1>
+          <p>
+            اكتشف الدراجات النارية المعروضة للبيع في العراق،
+            قارن الأسعار والموديلات وتواصل مباشرة مع البائع.
+          </p>
+          <a href="#listings" class="btn">اكتشف الدراجات ←</a>
+          <button class="btn btn-outline" onclick="openSell()">اعرض دراجتك</button>
+        </div>
+
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1000&q=85"
+            alt="دراجة نارية"
+          >
+        </div>
+      </div>
+
+      <div class="search-box">
+        <input id="search" placeholder="ابحث عن دراجة أو شركة..." oninput="renderBikes()">
+
+        <select id="brand" onchange="renderBikes()">
+          <option value="">جميع الشركات</option>
+          <option>Yamaha</option>
+          <option>Honda</option>
+          <option>Kawasaki</option>
+          <option>Suzuki</option>
+          <option>BMW</option>
+          <option>KTM</option>
+          <option>أخرى</option>
+        </select>
+
+        <select id="sort" onchange="renderBikes()">
+          <option value="new">الأحدث إضافة</option>
+          <option value="low">السعر: الأقل أولاً</option>
+          <option value="high">السعر: الأعلى أولاً</option>
+        </select>
+
+        <button class="btn" onclick="renderBikes()">بحث</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="listings" id="listings">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <h2>الدراجات المعروضة</h2>
+          <p>اكتشف الخيارات المتاحة واختر دراجتك</p>
+        </div>
+        <span id="count" style="color:#aaa;font-size:13px"></span>
+      </div>
+
+      <div class="grid" id="bikeGrid"></div>
+    </div>
+  </section>
+
+  <section id="categories">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <h2>تصفح حسب النوع</h2>
+          <p>اختر نوع الدراجة الذي يناسبك</p>
+        </div>
+      </div>
+
+      <div class="categories">
+        <div class="category" onclick="categorySearch('رياضية')">
+          🏁
+          <strong>رياضية</strong>
+          <span>Sport</span>
+        </div>
+
+        <div class="category" onclick="categorySearch('سياحية')">
+          🛣️
+          <strong>سياحية</strong>
+          <span>Touring</span>
+        </div>
+
+        <div class="category" onclick="categorySearch('كروزر')">
+          🏍️
+          <strong>كروزر</strong>
+          <span>Cruiser</span>
+        </div>
+
+        <div class="category" onclick="categorySearch('نارية')">
+          ⚡
+          <strong>دراجات متنوعة</strong>
+          <span>Other Bikes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sell">
+    <div class="container">
+      <div class="sell-banner">
+        <div>
+          <h2>عندك دراجة تريد تبيعها؟</h2>
+          <p>أضف إعلانك على IQ Moto وخلّي المشترين يتواصلون وياك.</p>
+        </div>
+        <button class="btn" onclick="openSell()">أضف إعلان مجاني +</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-content">
+    <div>
+      <div class="logo">IQ <span>MOTO</span></div>
+      <p>منصة بيع وشراء الدراجات النارية في العراق.</p>
+    </div>
+    <div>
+      © <span id="year"></span> IQ Moto — جميع الحقوق محفوظة
+    </div>
+  </div>
+</footer>
+
+<!-- نافذة إضافة إعلان -->
+
+<div class="modal" id="sellModal">
+  <div class="modal-content">
+    <button class="close" onclick="closeModal('sellModal')">×</button>
+    <h2>أضف دراجتك 🏍️</h2>
+
+    <form id="sellForm">
+      <div class="form-group">
+        <label>اسم الدراجة والموديل</label>
+        <input name="name" required placeholder="مثلاً Yamaha R6">
+      </div>
+
+      <div class="form-group">
+        <label>الشركة</label>
+        <select name="brand" required>
+          <option value="">اختر الشركة</option>
+          <option>Yamaha</option>
+          <option>Honda</option>
+          <option>Kawasaki</option>
+          <option>Suzuki</option>
+          <option>BMW</option>
+          <option>KTM</option>
+          <option>أخرى</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>سنة الصنع</label>
+        <input name="year" type="number" min="1950" max="2035" required>
+      </div>
+
+      <div class="form-group">
+        <label>السعر بالدينار العراقي</label>
+        <input name="price" type="number" min="1" required>
+      </div>
+
+      <div class="form-group">
+        <label>المحافظة</label>
+        <select name="city" required>
+          <option value="">اختر المحافظة</option>
+          <option>بغداد</option>
+          <option>البصرة</option>
+          <option>نينوى</option>
+          <option>أربيل</option>
+          <option>النجف</option>
+          <option>كربلاء</option>
+          <option>بابل</option>
+          <option>الأنبار</option>
+          <option>ديالى</option>
+          <option>كركوك</option>
+          <option>ذي قار</option>
+          <option>واسط</option>
+          <option>ميسان</option>
+          <option>المثنى</option>
+          <option>القادسية</option>
+          <option>صلاح الدين</option>
+          <option>دهوك</option>
+          <option>السليمانية</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>نوع الدراجة</label>
+        <select name="type">
+          <option>رياضية</option>
+          <option>سياحية</option>
+          <option>كروزر</option>
+          <option>نارية</option>
+          <option>أخرى</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>رابط صورة الدراجة</label>
+        <input name="image" type="url" required placeholder="https://example.com/bike.jpg">
+      </div>
+
+      <div class="form-group">
+        <label>رقم واتساب البائع مع رمز الدولة</label>
+        <input name="phone" required placeholder="9647XXXXXXXXX" inputmode="numeric">
+      </div>
+
+      <div class="form-group">
+        <label>تفاصيل إضافية</label>
+        <textarea name="description" rows="3" placeholder="الحالة والمواصفات..."></textarea>
+      </div>
+
+      <button class="btn" type="submit">نشر الإعلان</button>
+      <p class="form-note">
+        النسخة الحالية تحفظ الإعلانات على هذا الجهاز فقط.
+        النشر العام يحتاج إلى قاعدة بيانات وخدمة خلفية.
+      </p>
+    </form>
+  </div>
+</div>
+
+<!-- نافذة تفاصيل الدراجة -->
+
+<div class="modal" id="detailModal">
+  <div class="modal-content" id="detailContent"></div>
+</div>
+
+<!-- نافذة الإدارة -->
+
+<div class="modal" id="adminModal">
+  <div class="modal-content">
+    <button class="close" onclick="closeModal('adminModal')">×</button>
+    <h2>إدارة الإعلانات</h2>
+    <p style="color:#aaa;font-size:13px;margin-bottom:15px">
+      إدارة الإعلانات المحفوظة محلياً على هذا الجهاز.
+    </p>
+    <div id="adminList"></div>
+    <button class="btn btn-outline" onclick="exportData()" style="margin-top:18px">
+      تصدير نسخة من الإعلانات
+    </button>
+  </div>
+</div>
+
+<script>
+/*
+  IQ MOTO
+  لوحة الإدارة التجريبية:
+  افتح الموقع وأضف #admin إلى نهاية الرابط.
+
+  مهم: كلمة المرور داخل JavaScript ليست حماية حقيقية.
+  هذه نسخة أولية للتجربة فقط وليست مناسبة لإدارة موقع عام.
+*/
+
+const ADMIN_PASSWORD = "Moto2026";
+
+const demoBikes = [
+  {
+    id: 1,
+    name: "Yamaha R6",
+    brand: "Yamaha",
+    year: 2022,
+    price: 12500000,
+    city: "بغداد",
+    type: "رياضية",
+    image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80",
+    phone: "",
+    description: "نموذج تجريبي لتصميم الإعلان. السعر والمواصفات للعرض فقط."
+  },
+  {
+    id: 2,
+    name: "Kawasaki Ninja",
+    brand: "Kawasaki",
+    year: 2023,
+    price: 9800000,
+    city: "أربيل",
+    type: "رياضية",
+    image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=800&q=80",
+    phone: "",
+    description: "نموذج تجريبي لتصميم الإعلان. السعر والمواصفات للعرض فقط."
+  },
+  {
+    id: 3,
+    name: "Honda Motorcycle",
+    brand: "Honda",
+    year: 2021,
+    price: 6500000,
+    city: "البصرة",
+    type: "سياحية",
+    image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80",
+    phone: "",
+    description: "نموذج تجريبي لتصميم الإعلان. السعر والمواصفات للعرض فقط."
+  }
+];
+
+function loadBikes() {
+  try {
+    const saved = localStorage.getItem("iqmoto_bikes");
+    if (saved) return JSON.parse(saved);
+  } catch (error) {
+    console.error(error);
+  }
+  return demoBikes;
+}
+
+let bikes = loadBikes();
+
+function saveBikes() {
+  localStorage.setItem("iqmoto_bikes", JSON.stringify(bikes));
+}
+
+function formatPrice(price) {
+  return Number(price).toLocaleString("en-US") + " د.ع";
+}
+
+function safe(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[char]);
+}
+
+function validImage(url) {
+  try {
+    const parsed = new URL(url);
+    return ["http:", "https:"].includes(parsed.protocol);
+  } catch {
+    return false;
+  }
+}
+
+function renderBikes() {
+  const search = document.getElementById("search").value.trim().toLowerCase();
+  const brand = document.getElementById("brand").value;
+  const sort = document.getElementById("sort").value;
+
+  let filtered = bikes.filter(bike => {
+    const matchesSearch =
+      (bike.name + " " + bike.brand + " " + bike.city + " " + bike.type)
+      .toLowerCase().includes(search);
+
+    const matchesBrand = !brand || bike.brand === brand;
+
+    return matchesSearch && matchesBrand;
+  });
+
+  if (sort === "low") filtered.sort((a, b) => a.price - b.price);
+  if (sort === "high") filtered.sort((a, b) => b.price - a.price);
+  if (sort === "new") filtered.reverse();
+
+  document.getElementById("count").textContent =
+    filtered.length + " إعلان";
+
+  const grid = document.getElementById("bikeGrid");
+
+  if (!filtered.length) {
+    grid.innerHTML = '<div class="empty">ما لقينا دراجات تطابق بحثك.</div>';
+    return;
+  }
+
+  grid.innerHTML = filtered.map(bike => `
+    <article class="bike-card">
+      <div class="bike-image">
+        <img
+          src="${safe(bike.image)}"
+          alt="${safe(bike.name)}"
+          loading="lazy"
+          onerror="this.style.display='none'"
+        >
+        <span class="bike-tag">${safe(bike.type)}</span>
+      </div>
+
+      <div class="bike-info">
+        <h3>${safe(bike.name)}</h3>
+
+        <div class="bike-meta">
+          <span>📅 ${safe(bike.year)}</span>
+          <span>📍 ${safe(bike.city)}</span>
+          <span>${safe(bike.brand)}</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price">${formatPrice(bike.price)}</div>
+          <button class="btn" onclick="showDetails(${Number(bike.id)})">
+            التفاصيل
+          </button>
+        </div>
+      </div>
+    </article>
+  `).join("");
+}
+
+function categorySearch(type) {
+  document.getElementById("search").value = type;
+  document.getElementById("brand").value = "";
+  renderBikes();
+  document.getElementById("listings").scrollIntoView({behavior:"smooth"});
+}
+
+function openSell() {
+  document.getElementById("sellModal").classList.add("show");
+}
+
+function closeModal(id) {
+  document.getElementById(id).classList.remove("show");
+}
+
+function showDetails(id) {
+  const bike = bikes.find(item => item.id === id);
+  if (!bike) return;
+
+  const phone = String(bike.phone || "").replace(/\D/g, "");
+
+  document.getElementById("detailContent").innerHTML = `
+    <button class="close" onclick="closeModal('detailModal')">×</button>
+    <img class="detail-image" src="${safe(bike.image)}" alt="${safe(bike.name)}">
+    <h2>${safe(bike.name)}</h2>
+    <div class="bike-meta">
+      <span>الشركة: ${safe(bike.brand)}</span>
+      <span>سنة الصنع: ${safe(bike.year)}</span>
+      <span>المحافظة: ${safe(bike.city)}</span>
+    </div>
+    <h2 style="color:#ff626d;margin-top:12px">${formatPrice(bike.price)}</h2>
+    <p class="detail-description">${safe(bike.description || "لا توجد تفاصيل إضافية.")}</p>
+    ${
+      phone
+      ? `<a class="btn" style="text-align:center;width:100%"
+          target="_blank" rel="noopener noreferrer"
+          href="https://wa.me/${phone}">تواصل مع البائع عبر واتساب</a>`
+      : `<p class="form-note">هذا إعلان تجريبي ولا يحتوي على رقم بائع.</p>`
+    }
+  `;
+
+  document.getElementById("detailModal").classList.add("show");
+}
+
+document.getElementById("sellForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const form = new FormData(this);
+  const phone = String(form.get("phone")).replace(/\D/g, "");
+  const image = String(form.get("image")).trim();
+
+  if (!validImage(image)) {
+    alert("يرجى إدخال رابط صورة صحيح يبدأ بـ https://");
+    return;
+  }
+
+  if (phone.length < 10 || phone.length > 15) {
+    alert("يرجى التأكد من رقم واتساب مع رمز الدولة.");
+    return;
+  }
+
+  const bike = {
+    id: Date.now(),
+    name: String(form.get("name")).trim(),
+    brand: String(form.get("brand")),
+    year: Number(form.get("year")),
+    price: Number(form.get("price")),
+    city: String(form.get("city")),
+    type: String(form.get("type")),
+    image,
+    phone,
+    description: String(form.get("description")).trim()
+  };
+
+  bikes.unshift(bike);
+
+  try {
+    saveBikes();
+  } catch {
+    bikes.shift();
+    alert("تعذر حفظ الإعلان. قد تكون مساحة التخزين ممتلئة.");
+    return;
+  }
+
+  this.reset();
+  closeModal("sellModal");
+  renderBikes();
+
+  alert("تمت إضافة الإعلان على هذا الجهاز بنجاح!");
+  document.getElementById("listings").scrollIntoView({behavior:"smooth"});
+});
+
+function openAdmin() {
+  const password = prompt("أدخل كلمة مرور الإدارة:");
+  if (password !== ADMIN_PASSWORD) {
+    if (password !== null) alert("كلمة المرور غير صحيحة.");
+    return;
+  }
+
+  renderAdmin();
+  document.getElementById("adminModal").classList.add("show");
+}
+
+function renderAdmin() {
+  const list = document.getElementById("adminList");
+
+  if (!bikes.length) {
+    list.innerHTML = "<p>لا توجد إعلانات.</p>";
+    return;
+  }
+
+  list.innerHTML = bikes.map(bike => `
+    <div class="admin-row">
+      <span>${safe(bike.name)} — ${formatPrice(bike.price)}</span>
+      <button class="delete-btn" onclick="deleteBike(${Number(bike.id)})">
+        حذف
+      </button>
+    </div>
+  `).join("");
+}
+
+function deleteBike(id) {
+  if (!confirm("متأكد تريد تحذف هذا الإعلان؟")) return;
+
+  bikes = bikes.filter(bike => bike.id !== id);
+
+  try {
+    saveBikes();
+  } catch {
+    alert("تعذر حفظ التغييرات.");
+  }
+
+  renderAdmin();
+  renderBikes();
+}
+
+function exportData() {
+  const file = new Blob(
+    [JSON.stringify(bikes, null, 2)],
+    {type:"application/json"}
+  );
+
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(file);
+  link.download = "iq-moto-backup.json";
+  link.click();
+
+  URL.revokeObjectURL(link.href);
+}
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+renderBikes();
+
+/* فتح الإدارة من الرابط: أضف #admin إلى نهايته */
+if (location.hash === "#admin") {
+  window.addEventListener("load", () => {
+    setTimeout(openAdmin, 300);
+  });
+}
+
+document.querySelectorAll(".modal").forEach(modal => {
+  modal.addEventListener("click", event => {
+    if (event.target === modal) modal.classList.remove("show");
+  });
+});
+</script>
+
+</body>
+</html>
+```
